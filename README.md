@@ -29,7 +29,15 @@ npm run dev -- --open
 
 ## Building
 
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
+Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. 
+
+To build and deploy to one's own virtual machine, e.g., Google Cloud Platform GCE, follow the official instructions and if still confused take a look at this issue on github: https://github.com/sveltejs/kit/issues/2115 "give an option for default host and port when building with adapter-node #2115"
+
+Also, take a look at this stackoverflow q&a:  https://stackoverflow.com/questions/70398935/how-to-deploy-a-svelte-kit-app-after-build-using-nginx-as-web-server/70571992#70571992
+
+The key is to add the environmental variables in svelte.config.js, run the build locally without specifying any port or host, then once on the remote machine, use the PM2 start command preceded by HOST=localhost PORT=4000 (or whatever), and then add that port to the Nginx conf file.  
+
+Then:
 
 ```bash
 npm run build
