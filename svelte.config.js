@@ -12,14 +12,8 @@ const config = {
 			// default options are shown
 			out: 'build',
 			precompress: false,
-			env: {
-				host: 'HOST',
-				port: 'PORT'
-			}
 		}),
 
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
 	}
 };
 
